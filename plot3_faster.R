@@ -12,7 +12,7 @@ options(warn=-1)
 data <- fread(unzip("exdata_data_household_power_consumption.zip", list=TRUE)$Name, na.strings="?")[Date=="1/2/2007" | Date=="2/2/2007",]
 options(warn=0)
 
-# Add dateTime variable to data frame
+# Create dateTime variable for plot
 dateTime<-strptime(paste(data$Date, data$Time), "%d/%m/%Y%H:%M:%S")
 
 # Create png graphic device and plot on it. Set English locale for required day names
