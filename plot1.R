@@ -2,10 +2,9 @@
 
 plot1 <- function () {
 
-# Read file into data frame    
-tab5rows <- read.table(unz("exdata_data_household_power_consumption.zip", "household_power_consumption.txt"), header = TRUE, nrows = 5, sep=";")
-classes <- sapply(tab5rows, class)
-data <- read.table(unz("exdata_data_household_power_consumption.zip", "household_power_consumption.txt"), header = TRUE, colClasses = classes, sep=";", na.strings="?")
+# Read file into data frame
+zip <- unz("exdata_data_household_power_consumption.zip", "household_power_consumption.txt")
+data <- read.table(zip, header = TRUE, sep=";", na.strings="?")
 data <- data[data$Date=="1/2/2007" | data$Date=="2/2/2007",]
 
 # Create png graphic device and plot on it
