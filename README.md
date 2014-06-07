@@ -1,3 +1,12 @@
+## Note
+
+You'll find two versions for each function file and respective plot in png format:
+
+    plot#.R and plot#.png => are created using read.table to a data frame (read all file in memory, then subset)
+    plot#_faster.R and plot#_faster.png => are created using fread to a data.table (read and subset in memory in one go)
+
+the faster version executes 5x faster and generates the very same plot.
+
 ## Introduction
 
 This assignment uses data from
